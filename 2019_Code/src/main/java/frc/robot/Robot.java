@@ -131,15 +131,15 @@ public class Robot extends TimedRobot {
 		// Updates variables from Joystick
 		//maxSpeed = joy.getThrottle();
 		
-		if(Math.abs(joyY) > 0.2 && Math.abs(veloY) < maxSpeed) // If the joystick is being moved and the robot is below max speed, accelerate
-			veloY += 0.2 * joyY;
+		/*if(Math.abs(joyY) > 0.2 && Math.abs(veloY) < maxSpeed) // If the joystick is being moved and the robot is below max speed, accelerate
+			veloY += 0.2 * joyY * accel;
 		else if(Math.abs(joyY) <= 0.2 && Math.abs(veloY) > 0.2) // Joystick is resting, robot is still moving, then negative accelertaion
-			veloY -= 0.4 * -veloY;
+			veloY -= 0.4 * accel * -veloY;
 		else // If no movement, sets to zero
 			veloY = 0; 
 		
 		if(veloY >= maxSpeed) // Makes sures doesn't exceed max speed
-			veloY = maxSpeed;
+			veloY = maxSpeed; */
 		
 		if(Math.abs(joyY) > 0.2) // Controls Y axis movement (forwards/backwards)
 			drive.tankDrive(joyY, joyY);
@@ -159,4 +159,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void testPeriodic() {
 	}
-}                                  
+}        
+
+/* white space -Edit made by David Finch*/
